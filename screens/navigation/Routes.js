@@ -1,7 +1,6 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import 'react-native-gesture-handler';
 import Search from '../dealers/Search';
 import SplashScreen from '../dealers/SplashScreen';
 import MainScreen from '../dealers/MainScreen';
@@ -22,7 +21,7 @@ const Tab = createBottomTabNavigator();
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Tabs">
         <Stack.Screen
           name="Tabs"
           component={Tabs}
