@@ -22,7 +22,7 @@ const Tab = createBottomTabNavigator();
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="MainScreen">
         <Stack.Screen
           name="Tabs"
           component={Tabs}
