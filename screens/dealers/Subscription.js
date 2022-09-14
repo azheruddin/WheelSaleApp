@@ -13,7 +13,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const Subscription = () => {
   return (
-    <ScrollView showsVerticalScrollIndicator={false} style={{margin: 5}}>
+    <ScrollView showsVerticalScrollIndicator={false} style={{}}>
       <View
         style={{
           backgroundColor: 'white',

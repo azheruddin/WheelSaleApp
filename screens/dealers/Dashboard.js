@@ -9,15 +9,13 @@ import {
   ScrollView,
   ActivityIndicator,
   RefreshControl,
+  Alert,
 } from 'react-native';
 
-import {Button, Searchbar} from 'react-native-paper';
-import {SearchBar} from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Search} from './Search';
 
 const Dashboard = ({navigation, route}) => {
   // const dealers = route.params.dealers;
@@ -146,27 +144,6 @@ const Dashboard = ({navigation, route}) => {
             refreshControl={
               <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
             }>
-            {/* <SearchBar
-            searchIcon={{size: 24, color: 'white'}}
-            onChangeText={text => this.SearchFilterFunction(text)}
-            onClear={text => this.SearchFilterFunction('')}
-            placeholder="Search here..."
-            value={{}}
-            containerStyle={{
-              backgroundColor: '#00b8dc',
-              borderBottomColor: '#00b8dc',
-              borderTopColor: '#00b8dc',
-              justifyContent: 'center',
-              paddingHorizontal: 5,
-              padding: 0,
-              height: 40,
-            }}
-            style={{color: 'white'}}
-            inputContainerStyle={{backgroundColor: '#00b8dc'}}
-            clearIcon={{color: 'white'}}
-            placeholderTextColor="white"
-          /> */}
-
             {/* <View style={{width: '100%', height: 150}}>
               <Image
                 source={{
@@ -250,7 +227,6 @@ const Dashboard = ({navigation, route}) => {
                       textAlign: 'center',
                       color: '#3d3d72',
                       fontSize: 16,
-                      // fontWeight: '500',
                       marginVertical: 5,
                     }}>
                     Add Vehicles
@@ -282,7 +258,6 @@ const Dashboard = ({navigation, route}) => {
                       textAlign: 'center',
                       color: '#3d3d72',
                       fontSize: 16,
-                      // fontWeight: '500',
                       marginVertical: 5,
                     }}>
                     Show Vehicle
@@ -315,7 +290,6 @@ const Dashboard = ({navigation, route}) => {
                       textAlign: 'center',
                       color: '#3d3d72',
                       fontSize: 16,
-                      // fontWeight: '500',
                       marginVertical: 5,
                     }}>
                     Market Vehicle
@@ -323,7 +297,7 @@ const Dashboard = ({navigation, route}) => {
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => navigation.navigate('Support Agent')}
+                onPress={() => navigation.navigate('Sold Vehicles')}
                 style={styles.shadowCard}>
                 <View style={styles.card}>
                   <View
@@ -338,7 +312,7 @@ const Dashboard = ({navigation, route}) => {
                         alignSelf: 'center',
                         marginTop: 20,
                       }}
-                      name="support-agent"
+                      name="monetization-on"
                       size={70}
                       color="white"
                     />
@@ -348,13 +322,13 @@ const Dashboard = ({navigation, route}) => {
                       textAlign: 'center',
                       color: '#3d3d72',
                       fontSize: 16,
-                      // fontWeight: '500',
                       marginVertical: 5,
                     }}>
-                    Support Agent
+                    Sold Vehicle
                   </Text>
                 </View>
               </TouchableOpacity>
+
               <TouchableOpacity
                 onPress={() => navigation.navigate('Subscription')}
                 style={styles.shadowCard}>
@@ -381,16 +355,47 @@ const Dashboard = ({navigation, route}) => {
                       textAlign: 'center',
                       color: '#3d3d72',
                       fontSize: 16,
-                      // fontWeight: '500',
                       marginVertical: 5,
                     }}>
                     Subscription
                   </Text>
                 </View>
               </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Support')}
+                style={styles.shadowCard}>
+                <View style={styles.card}>
+                  <View
+                    style={{
+                      width: 140,
+                      height: 100,
+                      borderRadius: 10,
+                      backgroundColor: '#00b8dc',
+                    }}>
+                    <MaterialIcons
+                      style={{
+                        alignSelf: 'center',
+                        marginTop: 20,
+                      }}
+                      name="support-agent"
+                      size={70}
+                      color="white"
+                    />
+                  </View>
+                  <Text
+                    style={{
+                      textAlign: 'center',
+                      color: '#3d3d72',
+                      fontSize: 16,
+                      marginVertical: 5,
+                    }}>
+                    Support
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
 
-            <Image
+            {/* <Image
               style={{
                 height: 60,
                 width: '50%',
@@ -400,11 +405,17 @@ const Dashboard = ({navigation, route}) => {
               source={{
                 uri: 'https://th.bing.com/th/id/R.884a03cea2c946aab45fa7c32def656d?rik=BNTt3YG%2bqqYNkg&riu=http%3a%2f%2ffreevector.co%2fwp-content%2fuploads%2f2009%2f10%2fpowered-by-ethanol.png&ehk=sOVrfSTxn0alLyQSncKVrrMVpLxNjE5pjl5MNuqnWVw%3d&risl=&pid=ImgRaw&r=0',
               }}
-            />
-            <Text style={{color: 'darkgray', textAlign: 'center'}}>
-              WheelSale - by Qaswa Technologies
-            </Text>
+            /> */}
           </ScrollView>
+          <Text
+            style={{
+              color: 'blue',
+              textAlign: 'center',
+              top: 90,
+              position: 'relative',
+            }}>
+            WheelSale - by Qaswa Technologies
+          </Text>
         </View>
       </SafeAreaView>
     </>
