@@ -14,6 +14,8 @@ import ShowVehicles from '../dealers/ShowVehicles';
 import MarketVehicles from '../dealers/MarketVehicles';
 import Support from '../dealers/Support';
 import Dashboard from '../dealers/Dashboard';
+import SideMenus from '../dealers/SideMenus';
+import SoldVehicles from '../dealers/SoldVehicles';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -23,6 +25,12 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Tabs">
         <Stack.Screen
+          name="SideMenus"
+          component={SideMenus}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
           name="Tabs"
           component={Tabs}
           options={{headerShown: false}}
@@ -31,31 +39,79 @@ const Routes = () => {
         <Stack.Screen
           name="Add Vehicles"
           component={AddVehicles}
-          options={{headerShown: true}}
+          options={{headerShown: true,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              color: '#fff',
+            },
+            headerStyle: {
+              backgroundColor: '#00b8dc',
+            },}}
         />
 
         <Stack.Screen
           name="Show Vehicles"
           component={ShowVehicles}
-          options={{headerShown: true}}
+          options={{headerShown: true,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              color: '#fff',
+            },
+            headerStyle: {
+              backgroundColor: '#00b8dc',
+            },}}
         />
 
         <Stack.Screen
           name="Market Vehicles"
           component={MarketVehicles}
-          options={{headerShown: true}}
+          options={{headerShown: true,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              color: '#fff',
+            },
+            headerStyle: {
+              backgroundColor: '#00b8dc',
+            },}}
         />
 
         <Stack.Screen
-          name="Support Agent"
+          name="Sold Vehicles"
+          component={SoldVehicles}
+          options={{headerShown: true,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              color: '#fff',
+            },
+            headerStyle: {
+              backgroundColor: '#00b8dc',
+            },}}
+        />
+
+        <Stack.Screen
+          name="Support"
           component={Support}
-          options={{headerShown: true}}
+          options={{headerShown: true,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              color: '#fff',
+            },
+            headerStyle: {
+              backgroundColor: '#00b8dc',
+            },}}
         />
 
         <Stack.Screen
           name="Subscription"
           component={Subscription}
-          options={{headerShown: true}}
+          options={{headerShown: true,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              color: '#fff',
+            },
+            headerStyle: {
+              backgroundColor: '#00b8dc',
+            },}}
         />
 
         <Stack.Screen

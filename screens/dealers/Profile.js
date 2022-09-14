@@ -20,45 +20,51 @@ import {
 } from '../data/data.json';
 // import firestore from '@react-native-firebase/firestore';
 // import Auth from '@react-native-firebase/auth';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Profile = ({navigation}) => {
   const accountdetails = [
     {
       id: '1',
-      icon: profileIcon,
-      name: 'My Profile',
-      routes: 'My Profile',
+      icon: 'person-outline',
+      name: 'Profile',
+      routes: 'Profile',
+      size: 35,
     },
     {
       id: '2',
-      icon: documentIcon,
-      name: 'My Documents',
-      routes: 'My Documents',
+      icon: 'pricetags-outline',
+      name: 'Subscription plans',
+      routes: 'Subscription plans',
+      size: 35,
     },
     {
       id: '3',
-      icon: uploadIcon,
-      name: 'Document Upload',
-      routes: 'Documents Upload',
+      icon: 'md-shield-checkmark-outline',
+      name: 'Terms & conditions',
+      routes: 'Terms and conditions',
+      size: 35,
     },
     {
       id: '4',
-      icon: academicIcon,
-      name: 'Academic',
-      routes: 'Academic',
+      icon: 'lock-closed-outline',
+      name: 'Privacy policy',
+      routes: 'Privacy policy',
+      size: 35,
     },
     {
       id: '5',
-      icon: careerIcon,
-      name: 'Career',
-      routes: 'Career',
+      icon: 'md-information-circle-outline',
+      name: 'About us',
+      routes: 'About us',
+      size: 35,
     },
     {
       id: '6',
-      icon: logOutIcon,
+      icon: 'power-outline',
       name: 'Logout',
-      routes: 'MainScreen',
-      // signOut: Auth().signOut()
+      routes: 'Logout',
+      size: 35,
     },
   ];
 
@@ -92,7 +98,7 @@ const Profile = ({navigation}) => {
           }}>
           <ActivityIndicator
             size="large"
-            color="#01b7a9"
+            color="#00b8dc"
             visible={loading}
             textContent={'Loading...'}
             textStyle={styles.spinnerTextStyle}
@@ -106,8 +112,8 @@ const Profile = ({navigation}) => {
                 backgroundColor: 'white',
                 paddingBottom: 25,
                 marginBottom: 2,
-                borderBottomColor: 'lightgray',
-                borderBottomWidth: 2,
+                borderBottomColor: '#f7f7f7',
+                borderBottomWidth: 12,
               }}>
               <Avatar.Image
                 style={{
@@ -126,38 +132,75 @@ const Profile = ({navigation}) => {
                   fontWeight: '700',
                   alignSelf: 'center',
                   fontSize: 18,
-                  color: '#01b7a9',
+                  color: '#3d3d72',
                 }}>
                 {/* {Data.name} */}
+                Sarfaraz Khan
+              </Text>
+
+              <Text
+                style={{
+                  alignSelf: 'center',
+                  fontSize: 20,
+                  color: 'black',
+                }}>
+                Auto Deal wala
+              </Text>
+
+              <Text
+                style={{
+                  alignSelf: 'center',
+                  fontSize: 16,
+                  color: 'gray',
+                  paddingVertical: 5,
+                }}>
+                userDealwala@1234
               </Text>
             </View>
-
-            {accountdetails.map(({id, icon, name, routes}) => (
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                paddingHorizontal: 10,
+                backgroundColor: 'white',
+                marginTop: 5,
+              }}>
+              <Text style={{color: 'darkgray', alignSelf: 'center'}}>
+                This is a business account.
+              </Text>
+              <Ionicons
+                name="alert-circle-outline"
+                size={25}
+                color="darkgray"
+                style={{alignSelf: 'flex-end'}}
+              />
+            </View>
+            {accountdetails.map(({id, icon, name, routes, size}) => (
               <TouchableOpacity
                 key={id}
                 onPress={() => navigation.navigate(routes)}
-                style={{borderBottomColor: 'lightgray', borderBottomWidth: 2}}>
+                style={{borderBottomColor: 'white', borderBottomWidth: 2}}>
                 <View
                   style={{
                     flexDirection: 'row',
                     display: 'flex',
                     marginBottom: 2,
-                    paddingHorizontal: 5,
-                    paddingVertical: 5,
+                    paddingHorizontal: 15,
+                    paddingVertical: 10,
+                    backgroundColor: 'white',
                   }}>
-                  <Avatar.Image
-                    style={{backgroundColor: 'white'}}
-                    size={50}
-                    source={{
-                      uri: icon,
-                    }}
+                  <Ionicons
+                    name={icon}
+                    size={30}
+                    color="#3d3d72"
+                    style={{alignSelf: 'center'}}
                   />
                   <Text
                     style={{
-                      fontSize: 15,
-                      fontWeight: '700',
+                      fontSize: 17,
                       marginHorizontal: 15,
                       alignSelf: 'center',
+                      color: '#3d3d72',
                     }}>
                     {name}
                   </Text>

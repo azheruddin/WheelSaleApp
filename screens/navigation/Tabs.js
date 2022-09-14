@@ -43,7 +43,13 @@ const Tabs = () => {
         <Tab.Screen
           name="Notification"
           component={Notifications}
-          options={{headerShown: false, tabBarBadge: 3}}
+          options={{headerShown: true, tabBarBadge: 3, headerTintColor: '#fff',
+          headerTitleStyle: {
+            color: '#fff',
+          },
+          headerStyle: {
+            backgroundColor: '#00b8dc',
+          },}}
         />
         <Tab.Screen
           name="Profile"

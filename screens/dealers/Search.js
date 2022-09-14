@@ -1,21 +1,35 @@
-import {Searchbar} from 'react-native-paper';
-
+import {SearchBar} from 'react-native-elements';
+import React, {useState} from 'react';
 import {View, Text} from 'react-native';
-import React from 'react';
 
 const Search = () => {
-  const [searchQuery, setSearchQuery] = React.useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const onChangeSearch = query => setSearchQuery(query);
   return (
-    <View>
-      <Searchbar
-      placeholder="Search"
-      onChangeText={onChangeSearch}
-      value={searchQuery}
-      style={{borderRadius: 6, margin: 10}}
-    />
-    </View>
+    <>
+      <View style={{backgroundColor: '#00b8dc'}}>
+        <SearchBar
+          searchIcon={{size: 24, color: 'black'}}
+          onChangeText={e => onChangeSearch(e)}
+          onClear={onChangeSearch}
+          placeholder="search here..."
+          value={searchQuery}
+          containerStyle={{
+            backgroundColor: 'green',
+            justifyContent: 'center',
+            padding: 0,
+            margin: 15,
+            height: 40,
+          }}
+          style={{color: 'black'}}
+          inputContainerStyle={{backgroundColor: '#fff'}}
+          clearIcon={{color: 'gray'}}
+          placeholderTextColor="gray"
+        />
+      </View>
+      <Text>{searchQuery}</Text>
+    </>
   );
 };
 
